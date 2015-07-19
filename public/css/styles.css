@@ -1,0 +1,1035 @@
+/*
+@import ALL fonts - look at bootstrap.css 
+*/
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| LESS VARIABLES
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.gradient {
+  background: #339a99;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to right, #339a99 0%, #66cc9a 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#339a99', endColorstr='#66cc9a', GradientType=1);
+  /* IE6-9 */
+}
+.gradient2 {
+  background: #e7eaba;
+  /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZTdlYWJhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNDklIiBzdG9wLWNvbG9yPSIjNGFiN2MyIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzVhNjFhYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(135deg, #e7eaba 0%, #4ab7c2 49%, #5a61aa 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e7eaba', endColorstr='#5a61aa', GradientType=1);
+  /* IE6-8 fallback on horizontal gradient */
+}
+.transition {
+  transition: all 0.6s linear;
+  -webkit-transform: translateZ(0);
+}
+.transition-fast {
+  transition: all 0.2s linear;
+  -webkit-transform: translateZ(0);
+}
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| GENERAL
+|-----------------------------------------------------------------------------------------------------------------
+*/
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  padding-top: 51px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background-color: #1273BF;
+  background-image: none;
+  background-size: cover;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container {
+  padding: 0;
+}
+.row-wrap {
+  /*background: green;*/
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.footer {
+  margin-top: 10px;
+  text-align: center;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| STRUCTURE
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.experts {
+  font-size: 12px;
+  color: #333745;
+  background: #FFF;
+  margin: 0 -15px 0 -15px;
+  padding: 1px 10px 15px 10px;
+  position: relative;
+}
+.experts h3 {
+  color: #333745;
+}
+.experts-picks .flag {
+  padding-top: 0;
+  padding-bottom: 2px;
+  width: 20px;
+  height: auto;
+}
+.experts .flag {
+  padding-top: 0;
+  padding-bottom: 2px;
+  width: 10px;
+  height: auto;
+}
+.experts-box-close {
+  color: #FFF;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 15px;
+  background: #333745;
+  cursor: pointer;
+  z-index: 10;
+}
+.experts-box-close:hover {
+  color: #FFF;
+  background: #ff2534;
+}
+.info-box {
+  font-size: 14px;
+  color: #FFF;
+  background: #333745;
+  margin-bottom: 0px;
+  margin: 0 -15px 0 -15px;
+  padding: 0 15px 0 15px;
+  cursor: pointer;
+  border-top: none;
+}
+.info-box:hover {
+  color: #FFF;
+}
+.info-box-inner {
+  width: 50%;
+  display: inline-block;
+  padding: 15px 0 13px 0;
+}
+.info-box-inner-2 {
+  display: inline-block;
+  padding: 15px 0 13px 0;
+}
+.info-content {
+  color: #FFF;
+  background: #333745;
+  margin: 0 -15px 0 -15px;
+  padding: 0 10px 10px 10px;
+}
+.info-content > table {
+  margin-bottom: 0;
+}
+.info-content ol {
+  font-size: 14px;
+  margin-left: -20px;
+}
+.evt-btn {
+  width: 33.33333333333%;
+  display: inline;
+  padding: 10px;
+  float: left;
+  background: #333745;
+  border-top: solid 1px #3e4354;
+  border-bottom: solid 1px #1d2028;
+  border-left: solid 1px #3e4354;
+  border-right: solid 1px #1d2028;
+  text-align: center;
+}
+a > .evt-btn {
+  font-size: 12px;
+}
+a > .evt-btn:hover {
+  color: #FFF;
+  background: #fb0011;
+}
+.evt-btn-disabled {
+  pointer-events: none;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| TYPOGRAPHY
+|-----------------------------------------------------------------------------------------------------------------
+*/
+h2 {
+  color: #FFF;
+  font-size: 24px;
+}
+h3 {
+  font-size: 20px;
+  color: #333745;
+  line-height: 1.4;
+}
+h4 {
+  font-size: 16px;
+}
+.intro-text {
+  color: #FFF;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  padding: 15px 0 0 0;
+  text-align: center;
+}
+.intro-text h2 {
+  font-size: 36px;
+  line-height: 0.8;
+}
+.intro-text h3 {
+  font-size: 14px;
+  color: #FFF;
+}
+.intro-text li {
+  color: #FFF;
+  text-align: left;
+}
+.title {
+  font-size: 38px;
+  font-family: 'bendersolid';
+  line-height: 0.5;
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+.head-one {
+  font-size: 38px;
+  font-family: 'bendersolid';
+  line-height: 0.5;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  font-size: 74px;
+  color: #FFF;
+  /*background: @colGold;*/
+}
+.head-two {
+  font-size: 38px;
+  font-family: 'bendersolid';
+  line-height: 0.5;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  color: #FFF;
+  /*background: @colBlueDark;*/
+}
+.head-three {
+  font-size: 38px;
+  font-family: 'bendersolid';
+  line-height: 0.5;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  font-size: 48px;
+  color: #FFF;
+  /*background: @colBlueLight;*/
+}
+.head-four {
+  font-size: 38px;
+  font-family: 'bendersolid';
+  line-height: 0.5;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  color: #FFF;
+  background: #ff2534;
+}
+.head-five {
+  font-size: 38px;
+  font-family: 'bendersolid';
+  line-height: 0.5;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  color: #FFF;
+  background: #333745;
+}
+.giant-text {
+  font-family: 'bendersolid';
+  font-size: 42px;
+  color: #FFF;
+  margin: 10px 0;
+  line-height: 0.8;
+  text-align: center;
+}
+.large-text {
+  font-family: 'bendersolid';
+  font-size: 42px;
+  color: #FFF;
+  margin: 10px 0;
+  line-height: 0.8;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  margin-top: 15px;
+}
+.medalists {
+  font-size: 12px !important;
+}
+.left {
+  text-align: left;
+}
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+.normal {
+  font-weight: normal;
+}
+.copyright {
+  color: #FFF;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| LINKS
+|-----------------------------------------------------------------------------------------------------------------
+*/
+a {
+  color: #FFF;
+}
+a:hover {
+  color: #ff2534;
+  text-decoration: none;
+}
+:focus {
+  outline: 0 !important;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| LISTS
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.login-wrap,
+.page-wrap {
+  color: #FFF;
+}
+.intro-text ul li {
+  margin-left: -23px;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| COLOURS
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.text-white {
+  color: #FFF;
+}
+.red {
+  color: #ff2534;
+}
+.green {
+  color: #99CC00;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| BUTTONS
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.btn-warning {
+  color: #FFF;
+  background-color: #282b36;
+  border-color: #282b36;
+  margin-bottom: 10px;
+}
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning.focus,
+.btn-warning:active,
+.btn-warning.active,
+.open > .dropdown-toggle.btn-warning {
+  color: #ffffff;
+  background-color: #ffc727;
+  border-color: #ffc727;
+}
+.btn-default {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| TABS - Bootstrap
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.disabledTab {
+  pointer-events: none;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| FORMS
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.form-control {
+  border: solid 1px #EBEBEB;
+}
+.form-border {
+  color: #333745;
+  background: #FFF;
+  padding: 5px 30px 20px 30px;
+  border: solid 1px #DDD;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+}
+select.input-sm {
+  height: 30px;
+  line-height: 30px;
+  color: #FFF;
+  background: #333745;
+}
+select > option:hover {
+  background: #333745;
+  cursor: pointer;
+}
+.athletes,
+.picks {
+  background: url('../img/BG_20.png') repeat center center #333745;
+  background: #FFF;
+  margin: 0 -15px 0 -15px;
+  padding: 1px 10px 15px 10px;
+  color: #333745;
+}
+.athletes .true:not(.checked) {
+  display: none;
+}
+input[type="checkbox"] {
+  display: none;
+}
+.athletes label,
+.picks label {
+  color: #333745;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.4;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 10px 12px 2px 8px;
+  cursor: pointer;
+}
+.athletes label img,
+.picks label img {
+  float: right;
+  margin-top: -14px;
+}
+.athletes label:hover,
+.picks label:hover {
+  color: #FFF;
+  background: #27aae1;
+}
+.athletes li:nth-child(odd) {
+  background: url('../img/BG_40.png') repeat center center;
+  background: #FAFAFA;
+}
+.picks label {
+  color: #FFF !important;
+  cursor: move;
+}
+.sortable-container {
+  max-height: 170px;
+  margin-top: -30px;
+  padding: 15px 0;
+  overflow: auto;
+}
+.picks label.medal-0 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 3px;
+  padding: 14px 12px 6px 8px;
+  background: #ffc727;
+  text-align: left;
+  /*border-top: solid 2px lighten(@colGold, 10%);
+	border-bottom: solid 2px darken(@colGold, 10%);*/
+}
+.picks label.medal-1 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 3px;
+  padding: 14px 12px 6px 8px;
+  background: #999999;
+  text-align: left;
+  /*border-top: solid 2px lighten(@colSilver, 10%);
+	border-bottom: solid 2px darken(@colSilver, 10%);*/
+}
+.picks label.medal-2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 3px;
+  padding: 14px 12px 6px 8px;
+  background: #996400;
+  text-align: left;
+  /*border-top: solid 2px lighten(@colBronze, 10%);
+	border-bottom: solid 2px darken(@colBronze, 10%);*/
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| TABLES
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.picks-table {
+  background: none repeat scroll 0 0 #fff;
+  border-radius: 0 0 10px 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding: 15px 15px 1px 15px;
+}
+.picks-table .center {
+  text-transform: uppercase;
+}
+.picks-table a {
+  color: #333745 !important;
+}
+.picks-table a:hover {
+  color: #ff2534;
+}
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > tfoot > tr > td,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > thead > tr > th {
+  border-top: 1px solid #EBEBEB;
+  line-height: 1.42857;
+  padding: 8px;
+  vertical-align: top;
+}
+.medalists td.cur-event {
+  background: #333745;
+}
+.medalists .cur-event a {
+  /*color: #FFF;*/
+  background: #333745;
+}
+.medalists td.gold {
+  /*color: #FFF;*/
+  background: #ffc727;
+}
+.medalists td.silver {
+  /*color: #FFF;*/
+  background: #999999;
+}
+.medalists td.bronze {
+  /*color: #FFF;*/
+  background: #996400;
+}
+.medalists td.gold-light {
+  background: #fff4d4;
+}
+.medalists td.silver-light {
+  background: #f3f4f5;
+}
+.medalists td.bronze-light {
+  background: #ebe0cc;
+}
+.medalists td.gold-light-med {
+  background: #ffe7a1;
+}
+.medalists td.silver-light-med {
+  background: #d7dbde;
+}
+.medalists td.bronze-light-med {
+  background: #ddcaa7;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| TABS
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.nav-tabs > li > a:hover {
+  background: #ff2534;
+  color: #FFF;
+  border: solid 1px #ff2534;
+  border-bottom: none;
+}
+.nav > li > a {
+  font-size: 12px;
+  display: block;
+  padding: 14px 8px;
+  position: relative;
+  text-transform: uppercase;
+  border-radius: 0;
+  background: #333745;
+  border-bottom: none;
+}
+.login-wrap .nav {
+  padding-left: 0;
+}
+.navbar .nav {
+  padding-left: 20px;
+}
+.navbar .nav > li > a {
+  font-size: 16px;
+  padding: 16px 12px 12px 12px;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| IMAGES
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.title-icons {
+  width: 170px;
+  height: auto;
+  text-align: right;
+}
+.flag {
+  padding-top: 6px;
+  padding-bottom: 0;
+  width: 30px;
+  height: auto;
+}
+.ath-icon {
+  width: 68px;
+  height: 68px;
+  margin-top: 12px;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| ALERTS
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.alert-danger {
+  background-color: none;
+  color: #ff2534;
+}
+.alert {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| PADDING / MARGINS
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.mar-20 {
+  margin: 20px 0;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| BOOTSTRAP
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.navbar-inverse {
+  background-color: #333745 !important;
+  border-color: #000000;
+  background: #1d2028;
+}
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-text {
+  font-size: 12px;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| MISC
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.athletes ul,
+.picks ul {
+  margin-top: 10px;
+  padding: 0;
+}
+.athletes ul li,
+.picks ul li {
+  list-style: none;
+}
+.medals {
+  background: url('../img/medals.svg') no-repeat top center #ffffff;
+  padding-top: 80px;
+  text-align: center;
+}
+.checked {
+  color: #FFF !important;
+  background: #333745 !important;
+  font-weight: bold !important;
+  border-top: solid 1px #494e62;
+  border-bottom: solid 1px #000000;
+  transition: all 0.6s linear;
+  -webkit-transform: translateZ(0);
+}
+.rank-no {
+  background: none repeat scroll 0 0 #333745;
+  border-radius: 50%;
+  color: #fff;
+  display: table-cell;
+  float: left;
+  height: 20px;
+  margin: -2px 8px 0 0;
+  padding-top: 1px;
+  text-align: center;
+  vertical-align: middle;
+  width: 20px;
+}
+.final-rank-no {
+  background: none repeat scroll 0 0 #333745;
+  border-radius: 50%;
+  color: #fff;
+  display: table-cell;
+  float: left;
+  height: 20px;
+  margin: -2px 8px 0 0;
+  padding-top: 1px;
+  text-align: center;
+  vertical-align: middle;
+  width: 20px;
+  color: #FFF;
+  background: #333;
+}
+.scroll-to {
+  cursor: pointer;
+}
+.event-nav-pad {
+  margin-top: -15px;
+  padding: 0 10px;
+}
+.gravatar {
+  margin: -15px 10px 0 0;
+  float: left;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| EVENTS DROPDOWN
+|-----------------------------------------------------------------------------------------------------------------
+*/
+table.events {
+  font-size: 12px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  max-width: 100%;
+}
+.events td {
+  width: 25%;
+  padding: 10px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.events td:nth-child(2) {
+  font-weight: bold;
+  width: 50%;
+}
+.events p {
+  display: block;
+  padding: 15px;
+  margin: -15px;
+}
+.events a {
+  color: #333745;
+  cursor: pointer;
+  display: block;
+  padding: 15px 0;
+  margin: -15px 0;
+}
+.events a:hover {
+  font-weight: bold;
+  background: yellow;
+  padding: 10px 0;
+  margin: -10px 0;
+}
+.events tr:nth-child(even) {
+  background: #FFFFFF;
+}
+.events tr:nth-child(odd) {
+  background: #F5F5F5;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+| ANGULAR JS ANIMATIONS
+|-----------------------------------------------------------------------------------------------------------------
+*/
+.box-show-hide {
+  transition: 100ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  position: relative;
+  display: block;
+}
+.box-show-hide.ng-hide {
+  -webkit-transform: rotateX(-180deg) translatez(30px);
+  -ms-transform: rotateX(-180deg) translatez(30px);
+  transform: rotateX(-180deg) translatez(30px);
+  opacity: 0;
+}
+.box-show-hide {
+  -webkit-transform: rotateX(0deg) translatez(30px);
+  -ms-transform: rotateX(0deg) translatez(30px);
+  transform: rotateX(0deg) translatez(30px);
+  opacity: 1;
+}
+/* Scroll page transition to right when navigating to new page view */
+.view-animate-container {
+  position: relative;
+  -webkit-backface-visibility: hidden;
+}
+.view-animate {
+  padding: 0;
+}
+.view-animate.ng-enter,
+.view-animate.ng-leave {
+  transition: all 0.3s ease-in;
+  display: block;
+  width: 100%;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+}
+.view-animate.ng-enter {
+  left: 100%;
+}
+.view-animate.ng-enter.ng-enter-active {
+  left: 0;
+}
+.view-animate.ng-leave.ng-leave-active {
+  left: -100%;
+}
+/*
+|-----------------------------------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------------------------------------------
+|
+| MEDIA QUERIES | MEDIA QUERIES | MEDIA QUERIES | MEDIA QUERIES
+|
+|-----------------------------------------------------------------------------------------------------------------
+|-----------------------------------------------------------------------------------------------------------------
+*/
+/* 
+|-------------------------------------------------------------
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+|-------------------------------------------------------------
+*/
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 250px) and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  /* Force table to not be like tables anymore */
+  div.picks-table table,
+  div.picks-table thead,
+  div.picks-table tbody,
+  div.picks-table th,
+  div.picks-table td,
+  div.picks-table tr {
+    display: block;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  div.picks-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  div.picks-table tr {
+    /*border: 10px solid #FFF; */
+  }
+  div.picks-table td {
+    /* Behave  like a "row" */
+    border: none;
+    /*border-bottom: 1px solid #eee; */
+    position: relative;
+    padding-left: 50%;
+  }
+  div.picks-table td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 8px;
+    left: 6px;
+    width: 45%;
+    padding-right: 100px;
+    white-space: nowrap;
+  }
+  /*
+	Label the data
+	*/
+  div.picks-table td:nth-of-type(1):before {
+    content: "EVENT";
+    text-align: left;
+    font-weight: bold;
+  }
+  div.picks-table td:nth-of-type(2):before {
+    content: "GOLD";
+    text-align: left;
+    font-weight: bold;
+  }
+  div.picks-table td:nth-of-type(3):before {
+    content: "SILVER";
+    text-align: left;
+    font-weight: bold;
+  }
+  div.picks-table td:nth-of-type(4):before {
+    content: "BRONZE";
+    text-align: left;
+    font-weight: bold;
+  }
+  .navbar-brand {
+    padding: 15px 25px;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    padding-top: 51px;
+    font-size: 16px;
+    background-color: #1C75BC;
+    background-image: url('../img/swirls.svg');
+    background-attachment: fixed;
+    background-repeat: repeat-x;
+    background-position: center center;
+    background-size: cover;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  .intro-text {
+    padding: 15px 30px 0 30px;
+    background: url('../img/BG_30.png') repeat center center;
+    text-align: left;
+  }
+  .giant-text {
+    font-size: 100px;
+  }
+  .large-text {
+    font-size: 100px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+    font-size: 28px;
+  }
+  div.picks-table tbody > tr > td:first-child {
+    text-align: left;
+  }
+  .navbar-nav {
+    float: right;
+  }
+  .title {
+    font-size: 42px;
+    font-family: 'bendersolid';
+    line-height: 0.7;
+    text-align: center;
+    padding: 0 0 4px 0;
+    margin-bottom: 50px;
+  }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 978px) {
+  body {
+    padding-top: 80px;
+    font-size: 16px;
+  }
+  .giant-text {
+    font-size: 60px;
+  }
+  .large-text {
+    font-size: 60px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .head-one {
+    font-size: 180px;
+    line-height: .6;
+  }
+  .head-two,
+  .head-three {
+    font-size: 110px;
+    line-height: .6;
+  }
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 979px) and (max-width: 1199px) {
+  body {
+    padding-top: 80px;
+    font-size: 16px;
+  }
+  .intro-text {
+    text-align: left;
+  }
+  .intro-text h3,
+  .intro-text li {
+    font-size: 14px;
+  }
+  .experts {
+    font-size: 12px;
+  }
+  .head-one {
+    font-size: 180px;
+    line-height: .6;
+  }
+  .head-two,
+  .head-three {
+    font-size: 110px;
+    line-height: .6;
+  }
+  .nav > li > a {
+    font-size: 16px;
+    padding: 14px 12px;
+  }
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  body {
+    padding-top: 80px;
+    font-size: 16px;
+  }
+  .intro-text h2 {
+    font-size: 54px;
+  }
+  .intro-text h3 {
+    font-size: 20px;
+  }
+  .experts {
+    font-size: 12px;
+  }
+  .head-one {
+    font-size: 240px;
+    line-height: .6;
+  }
+  .head-two,
+  .head-three {
+    font-size: 140px;
+    line-height: .6;
+  }
+  .head-four,
+  .head-five {
+    font-size: 60px;
+  }
+  .nav > li > a {
+    font-size: 16px;
+    padding: 14px 12px;
+  }
+  .medals {
+    background: url('../img/medals.svg') no-repeat top right #ffffff;
+    padding-top: 1px;
+    text-align: left;
+  }
+  .sortable-container {
+    margin-top: -15px;
+  }
+}

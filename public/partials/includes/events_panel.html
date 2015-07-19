@@ -1,0 +1,26 @@
+<div class="row box-show-hide" ng-show="showEvents">
+	<div class="col-sm-6 col-sm-offset-3">
+		
+		<div class="experts">
+
+			<div class="experts-box-close" ng-click="toggleEvt()"><i class="fa fa-times"></i></div><!-- Close button -->
+
+			<h3 class="center"><strong>SELECT EVENT:</strong></h3>
+
+			<!-- <div ng-repeat="event in eventDropDowns" class="events">
+				<a href="#/selections/{{event.event_list_id}}"><div>{{event.event_list_name}}</div></a>
+			</div> -->
+
+			<table class="events">
+				<tr ng-repeat="event in eventDropDowns" class="events">
+					<td><a ng-href="#/selections/{{event.event_list_id}}/m">Men</a></td>
+					<td><p class="name">{{event.event_list_name}}</p></td>
+					<td><a ng-href="#/selections/{{event.event_list_id}}/w">Women</a></td>
+				</tr>
+			</table>
+
+		</div><!--ENDS experts-->
+		
+	</div><!--ENDS col-->
+
+</div><!-- ENDS row -->

@@ -1,0 +1,72 @@
+<!-- 
+*************************************************************************************************************
+// SHOW MEN / WOMEN TABS with list of selections previously made
+************************************************************************************************************* 
+-->
+<br>
+<ul class="nav nav-tabs">
+	<!-- ng-class if 'theGender' == m or w, make active -->
+	<li><a href="#/selections/1/{{theGender}}">HOME</a></li>
+	<li ng-class="{'active': theGender=='m'}"><a showtab="true" href="#mens" aria-controls="mens" role="tab" data-toggle="tab" ng-click="gender('m'); getPicks()">MEN</a></li>
+	<li ng-class="{'active': theGender=='w'}"><a showtab="" href="#womens" aria-controls="womens" role="tab" data-toggle="tab" ng-click="gender('w'); getPicks()">WOMEN</a></li>
+</ul>
+
+
+<div class="picks-table">
+<div class="tab-content">
+	<div class="tab-pane fade in active" id="mens">
+		<h4><strong>{{::screen_name}}</strong>, Your medalists ...</h4>
+
+		<div class="mod model-1">
+			<div class="spinner" ng-show="loading"></div><!-- Loading spinner .... -->
+		</div>
+
+		<table class="table table-hover medalists">
+			<tr class="hidden-sm hidden-xs">
+				<td class="center"><strong>Event</strong></td>
+				<td class="gold center"><strong><i class="fa fa-globe"></i> GOLD</strong></td>
+				<td class="silver center"><strong><i class="fa fa-globe"></i> SILVER</strong></td>
+				<td class="bronze center"><strong><i class="fa fa-globe"></i> BRONZE</strong></td>
+			</tr>
+
+			<tr ng-repeat="mySelection in mySelections track by $index">
+				<td ng-class="{'cur-event': routeParams === mySelection.event_id}" class="center"><strong><a href="#/selections/{{mySelection.event_id}}/{{theGender}}"><div>{{::mySelection.eventName}} <span class="normal">(EDIT)</span></div></a></strong></td>
+				<td ng-class="{'gold-light-med': routeParams === mySelection.event_id}"class="gold-light center">{{::mySelection.gold}}</td>
+				<td ng-class="{'silver-light-med': routeParams === mySelection.event_id}"class="silver-light center">{{::mySelection.silver}}</td>
+				<td ng-class="{'bronze-light-med': routeParams === mySelection.event_id}"class="bronze-light center">{{::mySelection.bronze}}</td>
+			</tr>
+		</table>
+	</div>
+
+
+	<div class="tab-pane fade" id="womens">
+		<h4><strong>{{::screen_name}}</strong>, Your medalists ...</h4>
+
+		<div class="mod model-1">
+			<div class="spinner" ng-show="loading"></div><!-- Loading spinner .... -->
+		</div>
+
+		<table class="table table-hover medalists">
+			<tr class="hidden-sm hidden-xs">
+				<td class="center"><strong>Event</strong></td>
+				<td class="gold center"><strong>GOLD</strong></td>
+				<td class="silver center"><strong>SILVER</strong></td>
+				<td class="bronze center"><strong>BRONZE</strong></td>
+			</tr>
+			<tr ng-repeat="mySelection in mySelections track by $index">
+				<td ng-class="{'cur-event': routeParams === mySelection.event_id}" class="center"><strong><a href="#/selections/{{mySelection.event_id}}/{{theGender}}"><div>{{::mySelection.eventName}} <span class="normal">(EDIT)</span></div></a></strong></td>
+				<td ng-class="{'gold-light-med': routeParams === mySelection.event_id}" class="gold-light center">{{::mySelection.gold}}</td>
+				<td ng-class="{'silver-light-med': routeParams === mySelection.event_id}" class="silver-light center">{{::mySelection.silver}}</td>
+				<td ng-class="{'bronze-light-med': routeParams === mySelection.event_id}" class="bronze-light center">{{::mySelection.bronze}}</td>
+			</tr>
+		</table>
+	</div>
+</div><!-- ENDS tab-content -->
+</div>
+
+
+<!-- Scroll back to top -->
+<div class="center">
+	<a href="#/picks/{{currentGender}}"><button class="btn btn-warning btn-md" scroll-to-item scroll-to="#top-scroll"><i class="fa fa-chevron-up"></i> BACK TO TOP</button></a>
+</div>
+<br>

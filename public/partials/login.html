@@ -1,0 +1,136 @@
+<div class="row-wrap">
+
+	<div class="row">
+
+		<div class="col-sm-12">
+			<div class="title">
+				<div class="head-one">BEIJING</div>
+				<div class="head-two">TRACK &amp; FIELD</div>
+				<div class="head-three">CHALLENGE</div>
+			</div>
+		</div><!-- ENDS col -->
+
+		<!--<div class="col-sm-4">
+			<img src="dist/img/starburst.png" class="img-responsive pull-right hidden-xs">
+		</div> ENDS col -->
+
+	</div>
+
+
+
+	<div class="row">
+
+		<div class="col-sm-6">
+
+			<img ng-src="dist/img/icons.png" class="img-responsive visible-xs center-block">
+
+			<div class="intro-text">
+
+				<h2><strong>Virtual Athletics</strong></h2>
+				<h3>Select your medal predictions for the World Track &amp; Field Championships in Bejing, China, 2015.</h3>
+				<p>Simply create a username and start picking your medal predictions for Beijing 2015. Have an event where your not sure? Just 'Ask the Experts' and see what they have to say. When your done, email a challenge to your friends and see who is the Track and Field Master!</p>
+
+				<p><i class="fa fa-check"></i> Challenge other track and field fans and see how you stack up</p>
+				<p><i class="fa fa-check"></i> Great prizes up for grabs</p>
+				<p><i class="fa fa-check"></i> Results and leaderboard published 30th August 2015</p>
+				
+				<br>
+
+			</div><!-- ENDS intro-text -->
+
+		</div><!-- ENDS col -->
+
+	
+
+		<div class="col-sm-6">
+
+			<h2><strong>Join now ... it's Free!</strong></h2>
+
+			<ul class="nav nav-tabs">
+				<li class="active"><a showtab="true" href="#login" aria-controls="login" role="tab" data-toggle="tab" ng-click="clearErrorMessage()">Login</a></li>
+				<li><a showtab="true" href="#register" aria-controls="register" role="tab" data-toggle="tab" ng-click="clearErrorMessage()">Register (FREE)</a></li>
+				<li><a showtab="true" href="#reset-password" aria-controls="reset-password" role="tab" data-toggle="tab" ng-click="clearErrorMessage()">Lost Password?</a></li>
+			</ul>
+
+			<div class="tab-content">
+
+				<div class="tab-pane fade in active" id="login">
+					
+					<form class="form-border" ng-submit="login()">
+
+						<h2 class="red"><strong>Login</strong></h2>
+
+						<div id="flash" class="alert alert-danger" ng-show="flash">{{flash}}</div>
+						
+						<div class="form-group">
+							<label for="login_email">Email address</label>
+							<input type="email" class="form-control" name="login_email" id="login_email" placeholder="Enter email" ng-model="credentials.login_email" required>
+						</div>
+						<div class="form-group">
+							<label for="login_password">Password</label>
+							<input type="password" class="form-control" name="login_password" id="login_password" placeholder="Password" ng-model="credentials.login_password" required>
+						</div>
+
+						<button type="submit" class="btn btn-default">Submit</button>
+
+					</form><br>
+
+				</div>
+
+
+				
+				<div class="tab-pane fade in" id="register">
+
+					<form class="form-border" ng-submit="register()">
+						<h2 class="red"><strong>Register</strong></h2>
+
+						<div id="flash" class="alert alert-danger" ng-show="flash">{{flash}}</div>
+
+						<div class="form-group">
+							<label for="reg_screen_name">Screen Name</label>
+							<input type="text" class="form-control" name="reg_screen_name" id="reg_screen_name" placeholder="Screen Name" ng-model="regCredentials.reg_screen_name" required>
+						</div>
+						<div class="form-group">
+							<label for="reg_email">Email address</label>
+							<input type="text" class="form-control" name="reg_email" id="reg_email" placeholder="Enter email" ng-model="regCredentials.reg_email" required>
+						</div>
+						<div class="form-group">
+							<label for="reg_password">Password</label>
+							<input type="password" class="form-control" name="reg_password" id="reg_password" placeholder="Password" ng-model="regCredentials.reg_password" required>
+						</div>
+						<button type="submit" class="btn btn-default">Submit</button>
+					</form><br>
+
+				</div>
+
+
+
+				<div class="tab-pane fade in" id="reset-password">
+
+					<form class="form-border" ng-submit="resetPassword()">
+						<h2 class="red"><strong>Reset Password</strong></h2>
+
+						<div id="flash" class="alert alert-danger" ng-show="flash">{{flash}}</div>
+
+						<h5>Enter the email you registered with, click submit and we will email you password reset instructions.</h5>
+						<div class="form-group">
+							<label for="email">Email address</label>
+							<input type="email" class="form-control" name="email" id="email" placeholder="Enter email" ng-model="passCredentials.email" required>
+						</div>
+						<button type="submit" class="btn btn-default">Submit</button>
+					</form><br>
+
+				</div>
+
+				<p class="copyright"><small>©Copyright 2015 Track Challenge. All Rights Reserved.</small> </p>
+				
+
+			</div><!-- ENDS tab-content -->
+
+		</div><!-- ENDS col -->
+
+		
+
+	</div><!--ENDS row-->
+
+</div><!-- ENDS login-page-wrap -->

@@ -1,0 +1,61 @@
+<div class="row box-show-hide" ng-show="showExperts">
+	<div class="col-sm-6 col-sm-offset-3">
+		
+		<div class="experts">
+
+			<div class="experts-box-close" ng-click="toggle()"><i class="fa fa-times"></i></div><!-- Close button -->
+
+			<h3 class="center"><strong>EXPERTS PICKS:</strong> <br class="visible-xs"><strong> {{theGenderLabel}} {{eventName.eventName}}</strong></h3>
+
+			<div class="row-wrap">
+
+				<div class="row">
+
+					<div ng-repeat="expert_pick in expert_picks">
+						<p>{{expert_pick.user}}</p>
+					</div>
+					
+					<div class="col-md-4">
+						<h4><strong>{{expert_picks.screen_name}}</strong>:</h4>
+						<p>
+							1. <img ng-src="dist/img/flags/{{expert_picksA.gold_country}}.png" class="flag"> {{expert_picksA.Gold}} <br>
+							2. <img ng-src="dist/img/flags/{{expert_picksA.silver_country}}.png" class="flag"> {{expert_picksA.Silver}} <br>
+							3. <img ng-src="dist/img/flags/{{expert_picksA.bronze_country}}.png" class="flag"> {{expert_picksA.Bronze}} 
+						</p>
+					</div>
+					<div class="col-md-4">
+						<h4><strong>{{expert_picks.screen_name}}</strong>:</h4>
+						<p>
+							1. <img ng-src="dist/img/flags/{{expert_picksB.gold_country}}.png" class="flag"> {{expert_picksB.Gold}} <br>
+							2. <img ng-src="dist/img/flags/{{expert_picksB.silver_country}}.png" class="flag"> {{expert_picksB.Silver}} <br>
+							3. <img ng-src="dist/img/flags/{{expert_picksB.bronze_country}}.png" class="flag"> {{expert_picksB.Bronze}}
+						</p>
+					</div>
+					<div class="col-md-4">
+						<h4><strong>{{expert_picks.screen_name}}</strong>:</h4>
+						<p>
+							1. <img ng-src="dist/img/flags/{{expert_picksC.gold_country}}.png" class="flag"> {{expert_picksC.Gold}} <br>
+							2. <img ng-src="dist/img/flags/{{expert_picksC.silver_country}}.png" class="flag"> {{expert_picksC.Silver}} <br>
+							3. <img ng-src="dist/img/flags/{{expert_picksC.bronze_country}}.png" class="flag"> {{expert_picksC.Bronze}}
+						</p>
+					</div>
+
+				</div><!--ENDS row-->
+
+			</div><!--ENDS row-wrap-->
+
+		</div><!-- ENDS experts -->
+
+	</div><!-- ENDS col -->	
+
+</div><!-- ENDS row -->
+
+
+
+
+
+
+
+
+
+

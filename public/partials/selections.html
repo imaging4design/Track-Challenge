@@ -1,0 +1,206 @@
+<div class="row-wrap">
+
+	<!-- 
+	*************************************************************************************************************
+	// EXPERTS BOX :: Displays the drop down of the experts suggested picks ...
+	************************************************************************************************************* -->
+
+	<div ng-include="'partials/includes/top_nav.html'"></div>
+
+	<div class=" center">
+		<div class="large-text">2015 BEIJING TRACK CHALLENGE</div>
+		<div class="giant-text">{{theGenderLabel}} <strong>{{eventName.eventName}}</strong></div>
+	</div>
+
+	<div ng-include="'partials/includes/experts_panel.html'"></div>
+	<div ng-include="'partials/includes/events_panel.html'"></div>
+	
+
+	<!-- 
+	*************************************************************************************************************
+	// START MAIN CONTENT :: Displays the two main columns - one for athlete lists, the other for medla selections ...
+	************************************************************************************************************* 
+	-->
+	
+	<div class="row">
+
+		<!-- LEFT COLUMN - Show athletes for selection -->
+		<div class="col-sm-6 col-sm-offset-3">
+
+			<!-- 
+			*************************************************************************************************************
+			// SHOW ATHLETE LISTS
+			*************************************************************************************************************-->
+
+			<div ng-show="!max3">
+
+				<!-- SHOW HELP Drop-down -->
+				<div class="info-box">
+					<span class="info-box-inner" ng-click="showRankInfo = !showRankInfo">
+					<strong class="hidden-xs"><i class="fa fa-bars"></i> Select Athletes</strong> (Instructions) <span ng-show="!showRankInfo"><i class="fa fa-chevron-down"></i></span><span ng-show="showRankInfo"><i class="fa fa-chevron-up"></i></span>
+					</span><span class="info-box-inner" ng-click="showPollInfo = !showPollInfo">
+					<strong class="hidden-xs"><i class="fa fa-bars"></i> Your</strong> (Contenders) <span ng-show="!showPollInfo"><i class="fa fa-chevron-down"></i></span><span ng-show="showPollInfo"><i class="fa fa-chevron-up"></i></span>
+					</span>
+				</div>
+
+
+				<div class="info-content box-show-hide" ng-show="showRankInfo">
+					<ol>
+						<li>Select (click on) any three athletes as your medal picks in the column below. They do not have to be in any particular order.</li>
+						<li>To deselect an athlete click on their name again.</li>
+						<li>Not familiar with this event? Click <strong>'EXPERTS'</strong> from above for some hints.</li>
+					</ol>
+				</div>
+
+
+				<div ng-controller="StatsCtrl" class="info-content box-show-hide" ng-show="showPollInfo">
+					<table class="table medalists">
+						<tr>
+							<td><strong>TOP MEDAL CONTENDERS</strong></td>
+							<td class="center"><strong>% VOTES</strong></td>
+						</tr>
+						<tr ng-repeat="stat in stats track by $index">
+							<td>{{::stat.name_last}}, {{::stat.name_first}}</td>
+							<td class="center">{{::stat.num}}</td>
+						</tr>
+					</table>
+				</div>
+
+
+
+
+
+				
+				<div class="athletes">
+
+					<img ng-src="dist/img/{{eventName.eventImage}}.png" class="img-responsive pull-right ath-icon">
+					<h3>{{theGenderLabel}} <strong>{{eventName.eventName}}</strong></h3>
+					<p ng-bind-html="completed"></p>
+					<p><small>Ordered by 2014 World Rankings:</small></p>
+
+
+					<!-- Do NOT Show athlete list if NOT a womens event or NOT a mens event -->
+					<p ng-if="athletes.length == 0"><strong>This event is not a {{::theGenderLabel}} event.</strong></p>
+
+
+					<ul ng-if="athletes.length > 0"><!-- Show athlete list -->
+						<li ng-repeat="athlete in athletes track by $index">
+							<label ng-class="{ checked : athlete.isChecked }" class="{{max3}}">
+								<input type="checkbox" ng-model="athlete.isChecked" ng-checked="selected.indexOf(athlete) > -1" ng-value="athlete" ng-click="clickSelection(athlete)"/> <span class="rank-no">{{::athlete.rank}} </span> {{::athlete.name_last | uppercase}}, {{::athlete.name_first}} <img ng-src="dist/img/flags/{{athlete.country}}.png" class="flag">
+							</label>
+						</li>
+					</ul>
+
+
+					<div class="mod model-1">
+						<div class="spinner" ng-show="loading"></div><!-- Loading spinner .... -->
+					</div>
+
+
+				</div><!-- ENDS athletes -->
+			
+			</div><!-- ENDS ng-show -->
+
+			
+
+
+
+			<!-- 
+			*************************************************************************************************************
+			// SHOW MEDAL SELCTIONS (Gold, Silver, Bronze)
+			************************************************************************************************************* 
+			-->
+			<div ng-show="max3">
+
+				<!-- SHOW HELP Drop-down -->
+				<div class="info-box" ng-click="showSelectionInfo = !showSelectionInfo">
+					<span class="info-box-inner-2">
+						<strong><i class="fa fa-bars"></i> Sort Positions</strong> (Instructions) <span ng-show="!showSelectionInfo"><i class="fa fa-chevron-down"></i></span><span ng-show="showSelectionInfo"><i class="fa fa-chevron-up"></i></span>
+					</span>
+
+					<div class="info-content box-show-hide" ng-show="showSelectionInfo">
+						<ol>
+							<li>To re-order your medal choices - drag athlete name to desired position.</li>
+							<li>To change your medal picks - click <strong>'CHANGE'</strong> and re-select athletes.</li>
+							<li>Click <strong>'SAVE'</strong> to save your medal picks and move to the next event.</li>
+						</ol>
+						
+					</div>
+				</div>
+				
+
+				<div class="picks medals">
+
+					<h3>Your {{theGenderLabel}} <strong>{{eventName.eventName}}</strong> Medalists</h3>
+					<p><small>{{sortPicks}}</small></p><br>
+
+
+					<div class="mod model-1">
+						<div class="spinner" ng-show="loading"></div><!-- Loading spinner .... -->
+					</div>
+					
+					<!-- Scroll to here from top 'View Picks' button -->
+					<a id="picks-scroll" name="picks"></a>
+
+
+					<div sv-root sv-part="orderPicks" class="sortable-container" ng-init="opts = {}; containmentChange(true)">
+						<div ng-repeat="athlete in orderPicks" sv-element="opts">
+							<label class="medal-{{$index}}"><span class="final-rank-no">{{$index + 1}} </span> {{::athlete.name_last | uppercase}}, {{::athlete.name_first}} <img ng-src="dist/img/flags/{{athlete.country}}.png" class="flag"></label>
+						</div>
+					</div>
+
+
+					<!-- 
+					*************************************************************************************************************
+					// FORM TO SUBMIT MEDALISTS (i.e., 3 x medalists)
+					************************************************************************************************************* 
+					-->
+					
+
+					<form name="clientForm">
+
+						<div ng-repeat="athlete in orderPicks track by $index">
+							<input type="hidden" ng-model="orderPicks[$index].id">
+						</div>
+
+						<div><input type="hidden" ng-model="orderPicks.eventID.eventID"></div>
+						<div><input type="hidden" ng-model="orderPicks.userID"></div>
+						
+						
+					</form>
+
+
+					<h3 ng-show="selectionMessage">{{::selectionMessage}}</h3>
+
+
+
+					<!--// This is the button to envoke the check() function! //-->
+					<div class="row-wrap">
+						<div class="row">
+							
+							<div class="col-sm-4">
+								<a href=""><button ng-show="max3" ng-click="check(orderPicks.userID);" class="btn btn-warning btn-md btn-block"><i class="fa fa-check"></i> SAVE</button></a>
+							</div>
+							<div class="col-sm-4">
+								<a href="#/selections/{{currentEvent}}/{{currentGender}}"><button ng-click="uncheckAll(); orderPicks.splice(index, 3); max3 = false" class="btn btn-warning btn-md btn-block"><i class="fa fa-times"></i> CHANGE</button></a>
+							</div>
+							<div class="col-sm-4">
+								<a href="#/picks/{{currentGender}}"><button class="btn btn-warning btn-md btn-block"><i class="fa fa-search"></i> MY PICKS</button></a>
+							</div>
+
+						</div><!-- ENDS row -->
+					</div><!-- ENDS row-wrap -->
+					
+
+				</div><!-- ENDS picks -->
+
+			</div><!-- ENDS ng-show -->
+
+			
+
+		</div><!-- ENDS col -->
+
+	</div><!-- ENDS row -->
+</div><!-- ENDS row-wrap -->
+
+
